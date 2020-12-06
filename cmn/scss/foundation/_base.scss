@@ -1,0 +1,26 @@
+// Google フォント
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: "Noto Sans JP",MyYuGothicM,YuGothic,-apple-system,BlinkMacSystemFont,"Hiragino kaku Gothic ProN",Meiryo,Verdana,arial,helvetica,sans-serif;
+  color: $color-font;
+  font-size: 1.6rem;
+  font-weight: 400; 
+  background-color: #fff; 
+  line-height: 1.6; 
+  -webkit-text-size-adjust: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: none; 
+  vertical-align: bottom;
+}
+a { 
+  text-decoration: none;
+  color: $color-font; 
+  }

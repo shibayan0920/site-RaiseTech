@@ -1,0 +1,22 @@
+// 共通ボタン
+.c-btn{
+  padding: 1em 1.5em;
+  border: none;
+  display: inline-block;
+  color: #fff;
+  background-color: $color-main;
+  font-weight: 700;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.c-fv__btn{
+  border-color: #2498b3;
+  font-size: 1.8rem;
+  padding: 2.2rem 4rem;
+
+  @include mq(sp){
+    padding: 1.2rem 1.8rem;
+    font-size: 1.6rem;
+  }
+}

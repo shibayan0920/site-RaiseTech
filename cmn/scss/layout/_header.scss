@@ -1,0 +1,199 @@
+$header-h:70px;
+
+.header{
+  color: $color-font-header;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  width: 100%;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// ロゴ タイトル 
+.header__ttl{
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: $header-h;
+  
+  & a{
+    display: flex;
+    align-items: flex-end;
+    font-weight: 900;
+    font-size: 1.4rem;
+
+    
+    & span{
+      line-height: 1.3;
+      margin-left: 16px;
+      white-space: nowrap;
+
+      @include mq(tb){
+        display: none;
+      }
+
+      & strong{
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+// ナビ
+.header__nav{
+  @include mq(tb){
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+  }
+  &.open{
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+    top: 70px;
+  }
+  
+  &-list{
+    display: flex;
+    
+    @include mq(tb){
+      flex-direction: column;
+    }
+  }
+
+  &-item{
+    > a{
+      padding: 0 15px;
+      color: #131d34;
+      display: block;
+      line-height: $header-h +1px;
+      font-weight: bold;
+
+      @include mq(tb){
+        line-height: 50px;
+        position: relative;
+      }
+    }
+    &:not(.header__nav-apply):hover{
+      background-color: #d4f1f8;
+
+      @include mq(tb){
+        background-color: #f3fafb;
+      }      
+    }
+
+  }
+
+
+  // ナビ　申込み
+  &-apply a{
+    color: #fff;
+    background:$color-main;
+    @include mq(tb){
+      display: none;
+    }
+
+  }
+
+  // プラス　マイナス切替
+  .accordion > a::before,
+  .accordion > a::after{
+    visibility: hidden;
+
+    @include mq(tb){
+      visibility: visible;
+    }
+  }
+  .accordion >a::before{
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    background-color:
+    $color-font;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: rotate(90deg);
+    transition: .2s;
+  }
+  .accordion >a::after{
+    content: "";
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $color-font;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transition: .3s;
+  }
+
+  .accordion >a.on::before{
+    transform: rotate(0deg);
+  }
+  .accordion >a.on::after{
+    background-color: transparent;
+  }
+
+
+}
+
+// ドロップダウンリスト
+.header__nav-item{
+  position: relative;
+  white-space: nowrap;
+}
+ul.dropdwn-menu{
+  display: none;
+  position: absolute;
+
+  @include mq(tb){
+    position: static;
+  }
+
+  li{
+    background-color: #e9f8fb;    
+
+
+    @include mq(tb){
+      background-color: #fff;
+    }
+    
+    a{
+      display: block;
+      font-weight: normal;
+      transition: .3s;
+      padding: 15px 60px 14px 15px;
+
+
+
+      @include mq(tb){
+        padding: 10px 10px 10px 24px;
+      }
+      
+      &:hover{
+        color: #2498b3;
+        background-color: #fff;
+
+        @include mq(tb){
+          color: $color-font;
+          background-color: #f3fafb;
+        }
+      }
+
+    }
+  }
+}
+
+
